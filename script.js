@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyD3ZdF6fzciOi-d-QNY_7yQA-6N6A18h8E';
+const API_KEY = process.env.API_KEY
 
 const chat = document.getElementById('chat');
 const input = document.getElementById('input');
@@ -31,7 +31,7 @@ async function enviar() {
 async function obtenerRespuesta(mensaje) {
 	try {
 		const res = await fetch(
-			'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyD3ZdF6fzciOi-d-QNY_7yQA-6N6A18h8E',
+			'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=process.env.API_KEY',
 			{
 				method: 'POST',
 				headers: {
